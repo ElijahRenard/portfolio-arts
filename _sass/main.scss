@@ -4,26 +4,40 @@
 
 // Import a Google Font
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Questrial&display=swap');
 
+//@import "../node_modules/bulma/sass/utilities/_all.sass";
 
 // 1. Import the initial variables
-@import "../../node_modules/bulma/sass/utilities/initial-variables";
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+
 
 // 2. Set your own initial variables
 // Update the blue shade, used for links
-$blue: #ff0000;//#06bcef;
+$blue: #06bcef;
 // Add pink and its invert
 $pink: #ff8080;
 $pink-invert: #fff;
 // Update the sans-serif font family
-$family-sans-serif: "Nunito";//"Helvetica", "Arial", sans-serif;
+$family-sans-serif: 'Nunito', 'Hammersmith One', 'Questrial', sans-serif;//"Nunito";//"Helvetica", "Arial", sans-serif;
+
+// Small footer please.
+$footer-padding: 1.5rem;
+
+// Customize shortcuts
+$shortcuts: ("margin": "m", "padding": "p") !default
+$directions: ("top": "t", "right": "r", "bottom": "b", "left": "l") !default
+$horizontal: "x" !default
+$vertical: "y" !default
+$values: ("0": 0, "1": 0.25rem, "2": 0.5rem, "3": 0.75rem, "4": 1rem, "5": 1.5rem, "6": 3rem) !default
 
 // 3. Set the derived variables
 // Use the new pink as the primary color
 $primary: $pink;
 $primary-invert: $pink-invert;
 
+
+
+
 // 4. Import the rest of Bulma
-
-
-@import "../../node_modules/bulma/bulma";
+@import "../node_modules/bulma/bulma";

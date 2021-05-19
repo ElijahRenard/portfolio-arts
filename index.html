@@ -8,9 +8,40 @@
     <meta description="A Portfolio of Illustrations, Graphic Design, and Sketches by Elijah Renard.">
     <meta keywords="illustrations, graphic design, sketches, portraits, 2d art">
     <meta author="Elijah Renard">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <link rel="stylesheet" href="css/main.css">
     <!-- Get Font Awesome -->
     <script src = "https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+    <!-- Script to load .html files internally -->
+    <script>
+      function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          /*search for elements with a certain atrribute:*/
+          file = elmnt.getAttribute("w3-include-html");
+          if (file) {
+            /* Make an HTTP request using the attribute value as the file name: */
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("w3-include-html");
+                includeHTML();
+              }
+            }
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            /* Exit the function: */
+            return;
+          }
+        }
+      }
+      </script>
   </head>
   <body>
     <section class="hero is-medium is-primary">
@@ -31,6 +62,13 @@
         </div>
       </div>
     </section>
+    <nav class="tabs is-centered">
+      <ul>
+        <li class="is-active"><a href="#">Illustrations</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
     <section class="section" style="border:0px solid red;">
       <div class="container">
         <div class="tile is-ancestor">
@@ -39,7 +77,9 @@
               <div class="tile is-parent is-vertical">
                 <article class="tile is-child notification is-primary">1a
                   <figure class="image is-3by4">
+                    <a href="page.html">
                     <img src="https://bulma.io/images/placeholders/480x640.png">
+                  </a>
                   </figure>
                 </article>
                 <article class="tile is-child notification is-warning">1b
@@ -105,55 +145,9 @@
           </div>
       </div>
     </section>
-    <section class="section">
-      <div class="container">
-        <div class="columns">
-          <div class="column is-8-desktop is-offset-2-desktop">
-            <div class="content">
-              <h3>What's more?</h3>
-              <p>
-                As a creative human being, I am <strong>multi-faceted</strong> and I offer:
-              </p>
-            <div class="field is-grouped">
-              <p class="control">
-                <a class="button is-medium is-primary" href="#">
-                  <strong class="has-text-weight-semibold">Product Design</strong>
-                </a>
-              </p>
-              <p class="control">
-                <a class="button is-medium is-link" href="page.html">
-                  <strong class="has-text-weight-semibold">DEIB Consultant</strong>
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer class="footer has-text-centered">
-      <div class="container">
-         <div class="columns">
-          <div class="column is-10-desktop is-offset-1-desktop">
-            <p>
-              <small>
-                Copyright © 1997-2021 Elijah Renard. All Rights Reserved. <a href="#">User Agreement</a>, <a href="#">Privacy</a>, <a href="#">Cookies</a>, <a href="#">AdChoice</a>.
-              </small>
-            </p>
-            <p style="margin-top: 1rem;">
-              <small>
-                Crafted with
-                <span class="icon-text">
-                  <span class="icon">
-                    <i class="fas fa-heart"></i>
-                  </span>
-                </span>
-                 in Tio'tia:ke and <a href="http://bulma.io">Bulma</a>
-               </small>
-             </p>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <div w3-include-html="inc/cta.html"></div>
+    <div w3-include-html="inc/footer.html"></div>
+    <script> includeHTML(); </script>
     <script type="text/javascript" src="lib/main.js"></script>
   </body>
 </html>
