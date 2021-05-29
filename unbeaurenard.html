@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Un Beau Renard: A Series of Affirmations & Illustrations by Elijah Renard</title>
+    <meta description="A Portfolio of Illustrations, Graphic Design, and Sketches by Elijah Renard.">
+    <meta keywords="illustrations, graphic design, sketches, portraits, 2d art">
+    <meta author="Elijah Renard">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Get Font Awesome -->
+    <script src = "https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+    <!-- Script to load .html files internally -->
+    <script>
+      function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          /*search for elements with a certain atrribute:*/
+          file = elmnt.getAttribute("w3-include-html");
+          if (file) {
+            /* Make an HTTP request using the attribute value as the file name: */
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("w3-include-html");
+                includeHTML();
+              }
+            }
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            /* Exit the function: */
+            return;
+            }
+          }
+        }
+    </script>
+  </head>
+  <body>
+    <section class="hero is-small is-primary">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title is-4">Elijah Renard</h1>
+        </div>
+      </div>
+    </section>
+    <div w3-include-html="inc/nav-work.html"></div>
+    <section class="section pt-0">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-10-desktop is-offset-1-desktop">
+            <article class="content">
+              <p class="title is-4 mt-2" style="margin-top:1em;border:0px solid red;">Un Beau Renard: A Series of Affirmations & Illustrations</p>
+              <p class="subtitle is-6"><span class="is-italic">Un Beau Renard</span> is a series of positive affirmations & illustrations to keep your chin up. Pencil sketch, digital painting, Photoshop.</p>
+              <div class="column is-10-desktop is-offset-1-desktop">
+                <figure class="image is1by1">
+                  <img src="img/unbeaurenard-LovePlant.png">
+                </figure>
+              </div>
+              <p class="title is-4 mt-2" style="margin-top:1em;border:0px solid red;">Love Plant</p>
+              <p class="subtitle is-6">Being in love isn't a mood, it's a commitment.</p>
+              <p class="subtitle is-7 is-family-code">#love #affirmations #loveaffirmations #illustrations #organic #flowers</p>
+            </article>
+            <article class="content">
+              <div class="column is-10-desktop is-offset-1-desktop">
+                <figure class="image is1by1">
+                  <img src="img/unbeaurenard-Butterflies.png">
+                </figure>
+              </div>
+              <p class="title is-4 mt-2" style="margin-top:1em;border:0px solid red;">Follow the Butterflies</p>
+              <p class="subtitle is-6">Tell me, when you are lost and uncertainty is your main worry... How do you find your answers? How do you find your center? The butterflies are an analogy. Would following the butterflies cause you worry?</p>
+              <p class="subtitle is-7 is-family-code">#love #affirmations #loveaffirmations #butterfly #butterflies #moss #forest #nature</p>
+            </article>
+            <article class="content">
+              <div class="column is-10-desktop is-offset-1-desktop">
+                <figure class="image is1by1">
+                  <img src="img/unbeaurenard-OnceWere.png">
+                </figure>
+              </div>
+              <p class="title is-4 mt-2" style="margin-top:1em;border:0px solid red;">Once Were</p>
+              <p class="subtitle is-6">You are only experiencing the loss of the way things once were. You are as lovable now as you were then.</p>
+              <p class="subtitle is-7 is-family-code">#love #affirmations #loveaffirmations #loss #life #cycles #tulip #tulips</p>
+            </article>
+            <article class="content">
+              <div class="column is-10-desktop is-offset-1-desktop">
+                <figure class="image is1by1">
+                  <img src="img/unbeaurenard-Anniversary.png">
+                </figure>
+              </div>
+              <p class="title is-4 mt-2" style="margin-top:1em;border:0px solid red;">Anniversary</p>
+              <p class="subtitle is-6">March 2019 marked two new milestones to my life:</p>
+                                      <ul>
+                                        <li>six years of hormone replacement therapy (hrt)</li>
+                                        <li>four years since top surgery (double mastectomy)</li>
+                                      </ul>
+                                    </p>
+              <p class="subtitle is-6">Time flies, my loves, time flies. 💜</p>
+              <p class="subtitle is-7 is-family-code">#TransIsBeautiful #celebrate #milestones #CelebrateYourMilestones #anniversary #TinyVersary #Boobiversary</p>
+            </article>
+            <article>
+              <p>You can follow <a href="https://www.instagram.com/unbeaurenard/"><span class="is-italic">Un Beau Renard</span></a> on Instagram.
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div w3-include-html="inc/footer.html"></div>
+    <script> includeHTML(); </script>
+    <script type="text/javascript" src="lib/main.js"></script>
+  </body>
+</html>
